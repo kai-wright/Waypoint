@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="good_footer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <title>Pushdown Footers</title>
+</head>
+
+<body class="good_footer">
+    <div class="main_container">
+
+        <header>
+            <hgroup>
+                <h1>Pushdown Footers</h1>
+                <p>Making your footer fit to the page</p>
+                <a class="like_button" href="../">Go back to main page</a>
+            </hgroup>
+        </header>
+
+        <main>
+            <h2>Sort out your footers!</h2>
+            <p>A common issue many people meet is that thier footer does not properly stick to the bottom of the page.
+                Luckily this is easy to fix. Here is an example of the way this can be done. These are also commonly
+                known as sticky footers.</p>
+            <div class="buttons">
+                <button id="toggle_more" onclick="toggle_show_more()">Show more text</button>
+                <button id="toggle_code" onclick="toggle_code()">Show code</button>
+                <button id="toggle_footer" onclick="toggle_footer()">Use naughty footer</button>
+            </div>
+            <article id="code_blocks">
+                <h3>CSS</h3>
+                <pre><code class="language-css">
+* {
+    box-sizing: border-box;
+}
+
+.main_container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+}
+                    </code></pre>
+                <h3>HTML</h3>
+                <pre><code class="language-html">
+&lt;div class="main_container"&gt;
+    &lt;header&gt;
+        &lt;-- Header content --&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;-- All of the important stuff --&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;-- Footer content --&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+
+</code></pre>
+                <h3>How does it work?</h3>
+                <p>This simple solution works by making a container that holds all the content and then positioning all
+                    the elements within it using grid.</p>
+                <pre><code>min-height: 100vh</code></pre>
+                <p> is used to make the container take
+                    up the full height of the page while still allowing it to grow if needed.
+                    <span class="hljs-string">1vh</span> is 1 hundreth of the viewport height (the height of the browser
+                    window). This means that the container will take up all of the viewport height.
+                </p>
+
+                <pre><code>display: grid</code></pre>
+                <p> is where the magic starts. It allows us to control the sizing of
+                    its contents in a grid where we definine the size of each row.</p>
+
+                <pre><code>grid-template-rows: min-content 1fr min-content</code></pre>
+                <p> defines the size of the
+                    header, main, and footer sections in that order. The <span class="hljs-string">min-content</span>
+                    value
+                    is used to tell the grid to make the content as small as possible while still fitting. By default
+                    grid
+                    wants to make all its contents equal. So <span class="hljs-string">1fr</span> means that the content
+                    will grow as much as it can with the remaining space. If the space is insufficient, the content will
+                    simply fit its self inbetween, this is our sticky footer!. On the other hand, if the content is
+                    larger,
+                    it will continue to grow to fit.
+                </p>
+                <p>Also worth mentioning is the</p>
+                <pre><code>* {
+    box-sizing: border-box;
+}</code></pre>
+                <p> is used to make sure that the padding and border are included in the total width and height of the
+                    container. Its is a good practice to use this in general as it tends to make more sense to most
+                    programmers.
+                </p>
+            </article>
+            <p id="more_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sed excepturi eius
+                corporis incidunt velit aperiam harum neque perferendis sapiente. Aliquam, veniam at repudiandae
+                obcaecati ducimus consequuntur vero debitis iste?<br>Consequatur corporis ea voluptatum minus cum esse
+                reprehenderit itaque, saepe sed aperiam fugit a quasi vel iusto! Architecto, harum mollitia laudantium
+                pariatur ut, animi cupiditate placeat atque debitis doloribus nesciunt.<br>Voluptatum neque ratione
+                fugiat, molestiae rerum aliquam, totam amet sint in sit officia cumque iusto nemo tenetur fugit
+                accusantium. Fugit a non iste numquam ipsum molestiae impedit corporis id quae.<br>Expedita nihil fuga
+                incidunt beatae ad iusto nostrum, veritatis velit vel eligendi! Culpa voluptatum velit adipisci at
+                voluptas corporis eaque sint quaerat! Incidunt explicabo mollitia iusto. Optio magni a
+                distinctio.<br>Illo, et! Ad, rerum quia. Voluptatum fugiat sit minus nulla ex quam ducimus facere
+                aliquam odio facilis rem totam velit, ipsam molestiae incidunt repellat mollitia nisi ea animi sunt
+                dolorum.<br>Nihil aspernatur, corrupti cum aperiam voluptates cupiditate explicabo, sed sequi ut animi
+                excepturi velit mollitia. Temporibus magni magnam eveniet facere libero reiciendis nam dicta laudantium
+                quia, recusandae impedit doloremque distinctio!<br>Voluptatem provident animi dolore vel ducimus quos,
+                reiciendis beatae eius assumenda quas commodi hic blanditiis amet quod totam molestias sapiente
+                laudantium cumque omnis? Ipsum placeat ea dolores quia eum tenetur!<br>Libero deserunt esse amet eaque.
+                Qui doloremque necessitatibus consequatur eligendi laboriosam voluptates voluptatem accusamus ullam iure
+                cupiditate perferendis illum cum commodi quae, repellendus error! Dignissimos amet incidunt ab quia
+                ut!<br>Maxime, laudantium? Similique quos minima praesentium neque modi rem repellendus, eos inventore
+                repudiandae laboriosam mollitia pariatur necessitatibus exercitationem laudantium beatae sint ad,
+                assumenda, voluptatem quisquam ex animi odit! Nihil, minus.<br>Quis facilis perspiciatis sed labore,
+                maxime ducimus ex soluta eius repellat aspernatur, temporibus veniam magni sapiente, totam ipsum quam
+                quae quidem consequuntur nesciunt alias. Alias modi praesentium possimus enim libero?<br>Cupiditate
+                quam, tempore odit nam reprehenderit in ad temporibus fugiat distinctio perferendis eos eius ullam.
+                Debitis consequatur eaque, ipsa, modi commodi cupiditate ducimus ex voluptas reprehenderit deleniti ad
+                perspiciatis ab.<br>Quasi impedit sit libero aspernatur tempora. Laboriosam similique in maiores
+                dignissimos sunt omnis mollitia, voluptas quas sint dolores consectetur minus quibusdam libero
+                recusandae laborum vitae commodi hic sed iusto a.<br></p>
+        </main>
+
+        <footer>
+            <p>I am a <span class="footer_type" data-type="good">good</span> footer</p>
+        </footer>
+
+    </div>
+    <script>
+        hljs.highlightAll();
+
+        let content_shown = false;
+        let code_shown = false;
+        let is_footer_naughty = false;
+
+        // Toggles the visibility of additional content on the webpage.
+        function toggle_show_more() {
+            content_shown = !content_shown;
+            document.getElementById("more_content").classList.toggle("show_more");
+        }
+
+        // Toggles the visibility of code blocks.
+        function toggle_code() {
+            code_shown = !code_shown;
+            document.getElementById("code_blocks").classList.toggle("show_code");
+            document.getElementById("toggle_code").textContent = code_shown ? "Hide code" : "Show code";
+        }
+
+        // Toggles the state of the footer between "naughty" and "good". This function is triggered by a button click event. It updates the `is_footer_naughty` flag and modifies the DOM elements accordingly. The `is_footer_naughty` flag determines the text content of the `.footer_type` element, the class of the `body` element, and the text content of the `#toggle_footer` element.
+        // No parameters are passed to this function.
+        // No return value.
+        function toggle_footer() {
+            is_footer_naughty = !is_footer_naughty;
+            document.querySelector(".footer_type").textContent = is_footer_naughty ? "naughty" : "good";
+            document.getElementsByTagName("body")[0].classList.toggle("good_footer");
+            document.getElementById("toggle_footer").textContent = is_footer_naughty ? "Use good footer" : "Use naughty footer";
+        }
+    </script>
+</body>
+
+</html>

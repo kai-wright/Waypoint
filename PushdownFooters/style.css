@@ -1,0 +1,49 @@
+/* Below is styling code only */
+.footer_type {
+	font-weight: bold;
+	color: red;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px red;
+}
+h2 {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+}
+p {
+	margin-bottom: 1em;
+}
+
+/* Show more text */
+
+#more_content {
+	overflow: hidden;
+	max-height: 0px;
+	transition: max-height 3.5s;
+}
+
+#more_content.show_more {
+	max-height: 2000px;
+}
+
+.buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em;
+	margin-bottom: 2em;
+}
+
+#code_blocks {
+	overflow: hidden;
+	max-height: 0px;
+	transition: max-height 3.5s;
+	max-width: min(60ch, 80%);
+}
+#code_blocks h3 {
+	text-align: center;
+}
+#code_blocks.show_code {
+	max-height: 10000px;
+}
+header p {
+	max-width: max-content;
+}

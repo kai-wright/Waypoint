@@ -1,0 +1,17 @@
+body.good_footer * {
+	box-sizing: border-box;
+}
+
+body.good_footer .main_container {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+}
+
+/* The below code is only stylistic, it is not needed! */
+
+body.good_footer .footer_type {
+	font-weight: bold;
+	color: green;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px green;
+}
